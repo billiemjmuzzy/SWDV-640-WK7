@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content
+    include data.pug
+    div(style='height: 100vh').mt-5
+        .flex-center.flex-column.mt-5
+            h1.display-3.animated.fadeIn.mb-4.brand-color-text.text-center.mt-5 Midstates Equipment &amp; Supply
+            h5.animated.fadeIn.mb-3 Products
+            p.animated.fadeIn.text-muted Content to change
+            .card-group
+                each product in products
+                    .card.mb3.mr-5
+                        img.card-img-top(src=product.imgSrc alt=`${product.productName}`)
+                        .card-body
+                            h4.card-title
+                                a=product.productName
+                            p.card-text
+                                | Some quick example text to build on the card title and make up the bulk of the card&apos;s
+                                | content.
+                            a.btn.btn-primary(href='#') Button
